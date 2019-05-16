@@ -4,9 +4,8 @@
 ### UI - connect. take: 
 * name / id
 * mac address
-___
 * includes: html,css,js
-
+___
 
 ### code
 * array of object users:  mac and id
