@@ -4,6 +4,10 @@
 ### UI - connect. take: 
 * name / id
 * mac address
+___
+* includes: html,css,js
+
+
 ### code
 * array of object users:  mac and id
 * class - open hotspot and check mac addresses. 
@@ -11,3 +15,6 @@
 * send report to DB
 * summarize all student arrivals in table ( lessons and id)
 
+* includes: c# or python
+
+#### presentation
