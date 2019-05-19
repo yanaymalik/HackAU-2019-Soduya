@@ -19,14 +19,13 @@ function dropTableCars() {
     );
 }
 
-function createTableCars() {
-    let query = "CREATE TABLE `vehicles` ("+
-    "`veh_reg_no`  VARCHAR(8)            NOT NULL,"+
-    "`category`    ENUM('car', 'truck')  NOT NULL DEFAULT 'car',"+
-    "`brand`       VARCHAR(30)           NOT NULL DEFAULT '',"+
-    "`desc`        VARCHAR(256)          NOT NULL DEFAULT '',"+
-    "`daily_rate`  DECIMAL(6,2)          NOT NULL DEFAULT 9999.99,"+
-    "PRIMARY KEY (`veh_reg_no`) );";
+function createTableChairs() {
+    let query = "CREATE TABLE `Chairs` ("+
+    "`Chair_ID`  VARCHAR(100)            NOT NULL,"+
+    "`University_name`                  NOT NULL,"+
+    "`University_ID`  VARCHAR(30)           NOT NULL DEFAULT '',"+
+    "`Floor`        VARCHAR(10)          NOT NULL DEFAULT '',"+
+    "PRIMARY KEY (`Chair_ID`) );";
     
     dal.runQuery(query,
         (res, extra) => { insertCars()},
@@ -35,7 +34,7 @@ function createTableCars() {
 }
 
 function insertCars() {
-    let query = "INSERT INTO `vehicles` VALUES " +
+    let query = "INSERT INTO `Chairs` VALUES " +
     `('SBA1111A', 'car', 'NISSAN SUNNY 1.6L', '4 Door Saloon, Automatic', 99.99),
      ('SBB2222B','car', 'TOYOTA ALTIS 1.6L', '4 Door Saloon, Automatic', 99.99),
      ('SBC3333C', 'car', 'HONDA CIVIC 1.8L',  '4 Door Saloon, Automatic', 119.99),
@@ -51,8 +50,8 @@ function insertCars() {
 
 
 //------------------------CRUD THAT IS USED DIRECT FROM UIL-----------------------------
-function getCars(successCallBack, failCallBack) {
-    let query="SELECT * FROM `vehicles`;";
+function getChairs(successCallBack, failCallBack) {
+    let query="SELECT * FROM `Chairs`;";
     dal.runQuery(query,successCallBack,failCallBack);
 }
 
