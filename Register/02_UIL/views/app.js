@@ -321,4 +321,38 @@ function SetFloor()
 }
 
 
+const axios = require('axios');
 
+// Make a request for a user with a given ID
+axios.get('https://library-87e60.firebaseio.com/')
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .finally(function () {
+    // always executed
+  });
+
+var newChair={};
+function addChair() {
+	newChair = {
+			"activ": document.getElementById("activ").value,
+			"floor": document.getElementById("floor").value,
+			"date": document.getElementById("date").value,
+			"time": document.getElementById("time").value,
+	};
+}
+
+axios.post('https://library-87e60.firebaseio.com/', {
+  newChair
+})
+.then(function (response) {
+	console.log(response);
+})
+.catch(function (error) {
+	console.log(error);
+});
