@@ -35,11 +35,61 @@ function createTableChair() {
 
 function insertChair() {
     let query = "INSERT INTO `chair` VALUES " +
-    `('001', 'car', 'NISSAN SUNNY 1.6L', '4 Door Saloon, Automatic', 99.99),
-     ('002','car', 'TOYOTA ALTIS 1.6L', '4 Door Saloon, Automatic', 99.99),
-     ('003', 'car', 'HONDA CIVIC 1.8L',  '4 Door Saloon, Automatic', 119.99),
-     ('004', 'truck', 'NISSAN CABSTAR 3.0L',  'Lorry, Manual ', 89.99),
-     ('005', 'truck', 'OPEL COMBO 1.6L',  'Van, Manual', 69.99);`;
+//         uni ariel, floor no1
+    `('001', 'Ariel', '01', '01'),
+     ('002','Ariel', '01', '01'),
+     ('003', 'Ariel', '01',  '01'),
+     ('004', 'Ariel', '01',  '01'),
+     ('005', 'Ariel', '01',  '01'),
+
+     ('001', 'Ariel', '01', '02'),
+     ('002','Ariel', '01', '02'),
+     ('003', 'Ariel', '01',  '02'),
+     ('004', 'Ariel', '01',  '02'),
+     ('005', 'Ariel', '01',  '02'),
+
+     ('001', 'Ariel', '01', '03'),
+     ('002','Ariel', '01', '03'),
+     ('003', 'Ariel', '01',  '03'),
+     ('004', 'Ariel', '01',  '03'),
+     ('005', 'Ariel', '01',  '03'),
+
+//  uni ariel, floor no2
+    ('001', 'Ariel', '02', '01'),
+     ('002','Ariel', '02', '01'),
+     ('003', 'Ariel', '02',  '01'),
+     ('004', 'Ariel', '02',  '01'),
+     ('005', 'Ariel', '02',  '01'),
+
+     ('001', 'Ariel', '02', '02'),
+     ('002','Ariel', '02', '02'),
+     ('003', 'Ariel', '02',  '02'),
+     ('004', 'Ariel', '02',  '02'),
+     ('005', 'Ariel', '02',  '02'),
+
+     ('001', 'Ariel', '02', '03'),
+     ('002','Ariel', '02', '03'),
+     ('003', 'Ariel', '02',  '03'),
+     ('004', 'Ariel', '02',  '03'),
+     ('005', 'Ariel', '02',  '03'),
+//  uni ariel, floor no3
+    ('001', 'Ariel', '03', '01'),
+     ('002','Ariel', '03', '01'),
+     ('003', 'Ariel', '03',  '01'),
+     ('004', 'Ariel', '03',  '01'),
+     ('005', 'Ariel', '03',  '01'),
+
+     ('001', 'Ariel', '03', '02'),
+     ('002','Ariel', '03', '02'),
+     ('003', 'Ariel', '03',  '02'),
+     ('004', 'Ariel', '03',  '02'),
+     ('005', 'Ariel', '03',  '02'),
+
+     ('001', 'Ariel', '03', '03'),
+     ('002','Ariel', '03', '03'),
+     ('003', 'Ariel', '03',  '03'),
+     ('004', 'Ariel', '03',  '03'),
+     ('005', 'Ariel', '03',  '03');`;
 
     dal.runQuery(query,
         (res, extra) => { console.log(res, extra) },
