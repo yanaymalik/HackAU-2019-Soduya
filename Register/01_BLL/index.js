@@ -6,53 +6,48 @@ function connectDb() {
 }
 
 function initDb() {
-    dropTableCars();
+    dropTableChair();
 }
 
 
-function dropTableCars() {
-    let query = "DROP TABLE IF EXISTS `vehicles`";
+function dropTableChair() {
+    let query = "DROP TABLE IF EXISTS `chair`";
     
     dal.runQuery(query,
-        (res, extra) => { createTableCars()},
+        (res, extra) => { createTableChair()},
         (err) => { console.log("sorry err", err) }
     );
 }
 
-function createTableCars() {
-    let query = "CREATE TABLE `vehicles` ("+
-    "`veh_reg_no`  VARCHAR(8)            NOT NULL,"+
-    "`category`    ENUM('car', 'truck')  NOT NULL DEFAULT 'car',"+
-    "`brand`       VARCHAR(30)           NOT NULL DEFAULT '',"+
-    "`desc`        VARCHAR(256)          NOT NULL DEFAULT '',"+
-    "`daily_rate`  DECIMAL(6,2)          NOT NULL DEFAULT 9999.99,"+
-    "PRIMARY KEY (`veh_reg_no`) );";
+function createTableChair() {
+    let query = "CREATE TABLE `chair` ("+
+    "`Chair_ID`  VARCHAR(100)            NOT NULL,"+
+    "`University_name`                  NOT NULL,"+
+    "`Floor`        VARCHAR(10)          NOT NULL,"+
+    "`Table`        VARCHAR(10)          NOT NULL,"+   
+    "PRIMARY KEY (`Chair_ID`) );";
     
     dal.runQuery(query,
-        (res, extra) => { insertCars()},
+        (res, extra) => { insertChair()},
         (err) => { console.log("sorry err", err) }
     );
 }
 
-function insertCars() {
-    let query = "INSERT INTO `vehicles` VALUES " +
-    `('SBA1111A', 'car', 'NISSAN SUNNY 1.6L', '4 Door Saloon, Automatic', 99.99),
-     ('SBB2222B','car', 'TOYOTA ALTIS 1.6L', '4 Door Saloon, Automatic', 99.99),
-     ('SBC3333C', 'car', 'HONDA CIVIC 1.8L',  '4 Door Saloon, Automatic', 119.99),
-     ('GA5555E', 'truck', 'NISSAN CABSTAR 3.0L',  'Lorry, Manual ', 89.99),
-     ('GA6666F', 'truck', 'OPEL COMBO 1.6L',  'Van, Manual', 69.99);`;
+function insertChair() {
+    let query = "INSERT INTO `chair` VALUES " +
+    `('001', 'car', 'NISSAN SUNNY 1.6L', '4 Door Saloon, Automatic', 99.99),
+     ('002','car', 'TOYOTA ALTIS 1.6L', '4 Door Saloon, Automatic', 99.99),
+     ('003', 'car', 'HONDA CIVIC 1.8L',  '4 Door Saloon, Automatic', 119.99),
+     ('004', 'truck', 'NISSAN CABSTAR 3.0L',  'Lorry, Manual ', 89.99),
+     ('005', 'truck', 'OPEL COMBO 1.6L',  'Van, Manual', 69.99);`;
 
     dal.runQuery(query,
         (res, extra) => { console.log(res, extra) },
         (err) => { console.log("sorry err", err) }
     );
 }
-
-
-
-//------------------------CRUD THAT IS USED DIRECT FROM UIL-----------------------------
-function getCars(successCallBack, failCallBack) {
-    let query="SELECT * FROM `vehicles`;";
+function getChairs(successCallBack, failCallBack) {
+    let query="SELECT * FROM `Chairs`;";
     dal.runQuery(query,successCallBack,failCallBack);
 }
 
